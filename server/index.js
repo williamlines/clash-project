@@ -7,12 +7,13 @@ const app = express();
 
 async function getPlayerData() {
   const data = await fetch(
-    "https://api.clashofclans.com/v1/players/%QUC2R9U2",
+    "https://api.clashofclans.com/v1/players/%23QUGC2R9U2",
     {
       headers: { Authorization: `Bearer ${key}` },
     }
   );
-  console.log(data);
+  const dataTransform = await data.json();
+  console.log(dataTransform);
   return data;
 }
 
